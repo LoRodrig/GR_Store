@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme { --color-brand-500: #0f8a83; }
+
+body {
+  @apply m-0 min-w-80 font-sans text-slate-900;
+  background: radial-gradient(circle at 80% -10%, #d9faf3 0, transparent 28rem), #f7f8fc;
+}
+
+button, input, select, textarea { font: inherit; }
+button { @apply cursor-pointer transition duration-200; }
+button:hover:not(:disabled) { transform: translateY(-1px); }
+input, select, textarea { @apply bg-white transition; }
+input:focus, select:focus, textarea:focus { @apply border-brand-500 ring-4 ring-teal-100 outline-none; }
+
+.app-sidebar {
+  background: linear-gradient(165deg, #070b1f 0%, #07162a 58%, #0a3540 140%);
+  box-shadow: 14px 0 36px rgba(15, 23, 42, .1);
+}
+.brand-mark {
+  @apply grid h-10 w-10 place-items-center rounded-xl text-white;
+  background: linear-gradient(135deg, #21b8a7, #0d766e);
+  box-shadow: 0 8px 20px rgba(20, 184, 166, .25);
+}
+.nav-item { @apply transition duration-200; }
+.nav-item:hover { @apply bg-white/8 text-white; }
+.nav-item-active {
+  background: linear-gradient(90deg, #0f8a83, #13a399);
+  box-shadow: 0 10px 24px rgba(15, 138, 131, .24);
+}
+.app-main { min-width: 0; }
+
+@media (max-width: 767px) {
+  .app-sidebar {
+    box-shadow: 0 -10px 30px rgba(15, 23, 42, .18);
+    background: rgba(7, 11, 31, .96);
+    backdrop-filter: blur(16px);
+  }
+  .nav-item-active { box-shadow: none; }
+}
