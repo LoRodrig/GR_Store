@@ -1,39 +1,56 @@
 @import "tailwindcss";
 
-@theme { --color-brand-500: #0f8a83; }
+@theme {
+  --color-brand-500: #c9a27a;
+  --color-brand-600: #b88a5e;
+}
 
 body {
   @apply m-0 min-w-80 font-sans text-slate-900;
-  background: radial-gradient(circle at 80% -10%, #d9faf3 0, transparent 28rem), #f7f8fc;
+  background: radial-gradient(circle at 88% -10%, #efe3d5 0, transparent 31rem), #f7f4ef;
 }
 
 button, input, select, textarea { font: inherit; }
 button { @apply cursor-pointer transition duration-200; }
 button:hover:not(:disabled) { transform: translateY(-1px); }
 input, select, textarea { @apply bg-white transition; }
-input:focus, select:focus, textarea:focus { @apply border-brand-500 ring-4 ring-teal-100 outline-none; }
+input:focus, select:focus, textarea:focus { @apply border-brand-500 ring-4 ring-amber-100 outline-none; }
 
 .app-sidebar {
-  background: linear-gradient(165deg, #070b1f 0%, #07162a 58%, #0a3540 140%);
-  box-shadow: 14px 0 36px rgba(15, 23, 42, .1);
+  background: #2b2214;
+  box-shadow: 14px 0 36px rgba(247, 244, 239, .14);
 }
-.brand-mark {
-  @apply grid h-10 w-10 place-items-center rounded-xl text-white;
-  background: linear-gradient(135deg, #21b8a7, #0d766e);
-  box-shadow: 0 8px 20px rgba(20, 184, 166, .25);
+.brand-logo { @apply h-auto w-full rounded-xl bg-[#f7f4ef] object-contain p-2; max-height: 104px; }
+.mobile-logo { @apply h-12 w-auto rounded-lg bg-[#f7f4ef] object-contain; }
+.status-chip { @apply rounded-full border border-[#d8d4ce] bg-white px-3 py-1 text-xs font-semibold text-[#6f4e37]; }
+.login-page {
+  background:
+    linear-gradient(135deg, rgba(247, 244, 239, .96), rgba(138, 117, 81, 0.96)),
+    #F7F4EF;
+}
+.login-logo { @apply h-auto w-56 rounded-xl bg-[#f7f4ef] object-contain p-3 shadow-2xl; }
+.login-card { @apply rounded-xl bg-[#f7f4ef] p-5 shadow-2xl ring-1 ring-white/20; }
+.settings-panel { border-left: 1px solid rgba(216, 212, 206, .75); }
+.logo-choice {
+  @apply flex items-center gap-3 rounded-lg border border-[#d8d4ce] bg-white p-2 text-sm font-medium text-[#1b1b1d] transition;
+}
+.logo-choice:hover { @apply border-brand-500; }
+.logo-choice-active {
+  border-color: #c9a27a;
+  box-shadow: 0 0 0 3px rgba(201, 162, 122, .22);
 }
 .nav-item { @apply transition duration-200; }
-.nav-item:hover { @apply bg-white/8 text-white; }
+.nav-item:hover { @apply bg-white/10 text-white; }
 .nav-item-active {
-  background: linear-gradient(90deg, #0f8a83, #13a399);
-  box-shadow: 0 10px 24px rgba(15, 138, 131, .24);
+  background: #c9a27a;
+  box-shadow: 0 10px 24px rgba(201, 162, 122, .22);
 }
 .app-main { min-width: 0; }
 
 @media (max-width: 767px) {
   .app-sidebar {
     box-shadow: 0 -10px 30px rgba(15, 23, 42, .18);
-    background: rgba(7, 11, 31, .96);
+    background: rgba(247, 244, 239, .96);
     backdrop-filter: blur(16px);
   }
   .nav-item-active { box-shadow: none; }
