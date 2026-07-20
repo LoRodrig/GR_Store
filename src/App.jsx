@@ -27,9 +27,9 @@ const loginEmail = import.meta.env.VITE_APP_LOGIN_EMAIL ?? 'GRstore.com'
 const loginPassword = import.meta.env.VITE_APP_LOGIN_PASSWORD ?? 'Senhapadrao123'
 
 const logoOptions = [
-  { id: 'branco', label: 'Fundo branco', src: '/logo-fundo-branco.jpg' },
-  { id: 'premium', label: 'Premium escuro', src: '/logo-fundo.jpg' },
-  { id: 'chapado', label: 'Chapado', src: '/logo-fundo-chapado.jpg' },
+  { id: 'branco', label: 'Fundo branco', src: `${import.meta.env.BASE_URL}logo-fundo-branco.jpg` },
+  { id: 'premium', label: 'Premium escuro', src: `${import.meta.env.BASE_URL}logo-fundo.jpg` },
+  { id: 'chapado', label: 'Chapado', src: `${import.meta.env.BASE_URL}logo-fundo-chapado.jpg` },
 ]
 
 const defaultSettings = {
@@ -79,7 +79,7 @@ function LoginScreen({ onLogin }) {
     <main className="login-page grid min-h-screen place-items-center px-5 py-10">
       <section className="w-full max-w-sm">
         <div className="mb-6 flex justify-center">
-          <img src="/logo-fundo-branco.jpg" alt="GR Store" className="login-logo" />
+          <img src={`${import.meta.env.BASE_URL}logo-fundo-branco.jpg`} alt="GR Store" className="login-logo" />
         </div>
         <form onSubmit={submit} className="login-card grid gap-4">
           <div>
