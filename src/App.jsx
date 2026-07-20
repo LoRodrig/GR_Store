@@ -18,6 +18,7 @@ import {
 import Dashboard from './pages/Dashboard'
 import CrudPage from './pages/CrudPage'
 import SalesPage from './pages/SalesPage'
+import SalesHistoryPage from './pages/SalesHistoryPage'
 import InventoryPage from './pages/InventoryPage'
 
 const authKey = 'gr-store-authenticated'
@@ -259,13 +260,13 @@ export default function App() {
         </header>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/clientes" element={<CrudPage title="Clientes" table="clientes" fields={[['nome', 'Nome'], ['telefone', 'Telefone'], ['instagram', 'Instagram'], ['observacao', 'Observacao']]} />} />
-          <Route path="/vendedores" element={<CrudPage title="Vendedores" table="vendedores" fields={[['nome', 'Nome'], ['telefone', 'Telefone']]} />} />
-          <Route path="/categorias" element={<CrudPage title="Categorias" table="categorias" fields={[['nome', 'Nome']]} />} />
-          <Route path="/produtos" element={<CrudPage title="Produtos" table="produtos" fields={[['nome', 'Nome'], ['categoria_id', 'Categoria', 'select', 'categorias'], ['marca', 'Marca'], ['cor', 'Cor'], ['tamanho', 'Tamanho'], ['preco', 'Preco', 'number']]} />} />
+          <Route path="/clientes" element={<CrudPage title="Clientes" table="clientes" icon={Users} subtitle="Cadastro de clientes da loja." fields={[['nome', 'Nome'], ['telefone', 'Telefone'], ['instagram', 'Instagram'], ['observacao', 'Observacao']]} />} />
+          <Route path="/vendedores" element={<CrudPage title="Vendedores" table="vendedores" icon={UserRoundCog} subtitle="Equipe de vendas cadastrada." fields={[['nome', 'Nome'], ['telefone', 'Telefone']]} />} />
+          <Route path="/categorias" element={<CrudPage title="Categorias" table="categorias" icon={Tags} subtitle="Categorias usadas nos produtos." fields={[['nome', 'Nome']]} />} />
+          <Route path="/produtos" element={<CrudPage title="Produtos" table="produtos" icon={Package} subtitle="Catálogo de produtos da loja." fields={[['nome', 'Nome'], ['categoria_id', 'Categoria', 'select', 'categorias'], ['marca', 'Marca'], ['cor', 'Cor'], ['tamanho', 'Tamanho'], ['preco', 'Preco', 'number']]} />} />
           <Route path="/estoque" element={<InventoryPage />} />
           <Route path="/vendas/nova" element={<SalesPage />} />
-          <Route path="/vendas" element={<CrudPage title="Historico de vendas" table="vendas" fields={[['valor_total', 'Total', 'number'], ['data_venda', 'Data da venda']]} readOnly />} />
+          <Route path="/vendas" element={<SalesHistoryPage />} />
         </Routes>
       </main>
 
